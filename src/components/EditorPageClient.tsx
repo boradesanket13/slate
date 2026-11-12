@@ -201,16 +201,16 @@ export default function EditorPageClient() {
   };
 
   return (
-    <div className="flex h-dvh flex-col overflow-hidden bg-gradient-to-b from-white via-white to-gray-50 dark:from-[#111010] dark:via-[#111010] dark:to-[#111010]">
+    <div className="flex h-dvh flex-col overflow-hidden bg-linear-to-b from-white via-white to-gray-50 dark:from-[#111010] dark:via-[#111010] dark:to-[#111010]">
       <header className="fixed inset-x-0 top-3 z-20 px-3 sm:top-6 sm:px-6">
         <div className="mx-auto grid w-full grid-cols-1 items-start gap-2 min-[1400px]:grid-cols-[1fr_460px_1fr]">
-          <div className="order-2 mx-auto w-fit rounded-md border border-white/20 bg-[#1f1f1f] p-1 sm:p-0.5 min-[1400px]:order-none min-[1400px]:col-start-2 min-[1400px]:row-start-1">
+          <div className="order-2 mx-auto w-fit rounded-md border border-white/20 bg-[#1f1f1f] p-1 sm:p-0.5 min-[1400px]:order-0 min-[1400px]:col-start-2 min-[1400px]:row-start-1">
             <div role="group" aria-label="Editor mode" className="relative flex items-center gap-1">
-              <span aria-hidden="true" className={`absolute inset-y-0 left-0 w-[110px] rounded bg-white shadow-sm transition-transform duration-200 ease-out motion-reduce:transition-none ${editorMode === "code" ? "translate-x-[114px]" : "translate-x-0"}`} />
+              <span aria-hidden="true" className={`absolute inset-y-0 left-0 w-[110px] rounded bg-white shadow-xs transition-transform duration-200 ease-out motion-reduce:transition-none ${editorMode === "code" ? "translate-x-[114px]" : "translate-x-0"}`} />
               <button
                 type="button"
                 aria-pressed={editorMode === "screenshot"}
-                className={`relative z-10 h-9 w-[110px] rounded px-2 text-sm transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-white/70 motion-reduce:transition-none sm:h-8 ${
+                className={`relative z-10 h-9 w-[110px] rounded px-2 text-sm transition-colors duration-200 focus-visible:outline-solid focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white/70 motion-reduce:transition-none sm:h-8 ${
                   editorMode === "screenshot"
                     ? "font-semibold text-[#111]"
                     : "text-white/70 hover:text-white"
@@ -222,7 +222,7 @@ export default function EditorPageClient() {
               <button
                 type="button"
                 aria-pressed={editorMode === "code"}
-                className={`relative z-10 h-9 w-[110px] rounded px-2 text-sm transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-white/70 motion-reduce:transition-none sm:h-8 ${
+                className={`relative z-10 h-9 w-[110px] rounded px-2 text-sm transition-colors duration-200 focus-visible:outline-solid focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white/70 motion-reduce:transition-none sm:h-8 ${
                   editorMode === "code"
                     ? "font-semibold text-[#111]"
                     : "text-white/70 hover:text-white"
@@ -240,7 +240,7 @@ export default function EditorPageClient() {
               <span>Slate</span>
             </Link>
 
-            <div className="ml-auto flex w-fit flex-wrap items-center gap-0.5 rounded-xl border border-black/10 bg-white/35 p-0.5 text-gray-900 shadow-sm backdrop-blur-2xl dark:border-white/10 dark:bg-[#111010]/65 dark:text-white min-[1400px]:col-start-3 min-[1400px]:row-start-1">
+            <div className="ml-auto flex w-fit flex-wrap items-center gap-0.5 rounded-xl border border-black/10 bg-white/35 p-0.5 text-gray-900 shadow-xs backdrop-blur-2xl dark:border-white/10 dark:bg-[#111010]/65 dark:text-white min-[1400px]:col-start-3 min-[1400px]:row-start-1">
               <button type="button" aria-label="Undo" title="Undo" disabled={!canUndo || isExporting} onClick={undo} className="flex h-8 w-8 items-center justify-center rounded-md hover:bg-black/5 disabled:opacity-35 dark:hover:bg-white/10"><Undo2 size={16} /></button>
               <button type="button" aria-label="Redo" title="Redo" disabled={!canRedo || isExporting} onClick={redo} className="flex h-8 w-8 items-center justify-center rounded-md hover:bg-black/5 disabled:opacity-35 dark:hover:bg-white/10"><Redo2 size={16} /></button>
               {editorMode === "screenshot" && <ScreenshotMarkup sidebarOpen={editSidebarOpen} onSidebarOpenChange={setEditSidebarOpen} />}

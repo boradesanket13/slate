@@ -51,7 +51,7 @@ export default function Hero() {
           </button>
         ))}
       </div>
-      <div className="relative mx-auto mt-4 aspect-[1920/990] w-[calc(100%-40px)] max-w-6xl overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-black/50">
+      <div className="relative mx-auto mt-4 aspect-1920/990 w-[calc(100%-40px)] max-w-6xl overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-black/50">
         <Image
           src={previewMode === "screenshot" ? screenshotPreview : codePreview}
           alt={previewMode === "screenshot" ? "Slate screenshot editor preview" : "Slate code image editor preview"}
