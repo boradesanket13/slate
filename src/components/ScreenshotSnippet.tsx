@@ -742,7 +742,7 @@ export default function ScreenshotSnippet({ settings }: ScreenshotSnippetProps) 
                     type="button"
                     onClick={open}
                     aria-label="Choose screenshot file"
-                    className="relative flex h-8 w-8 items-center justify-center rounded-lg text-white drop-shadow-[0_3px_12px_rgba(0,0,0,0.72)] transition hover:-translate-y-0.5 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50 sm:h-11 sm:w-11 sm:rounded-xl"
+                    className="relative flex h-8 w-8 items-center justify-center rounded-lg text-white drop-shadow-[0_3px_12px_rgba(0,0,0,0.72)] transition hover:-translate-y-0.5 hover:scale-105 focus:outline-hidden focus:ring-2 focus:ring-white/50 sm:h-11 sm:w-11 sm:rounded-xl"
                   >
                     <UploadCloud className="h-6 w-6 stroke-[1.8] sm:h-8 sm:w-8" />
                   </button>
@@ -781,7 +781,7 @@ export default function ScreenshotSnippet({ settings }: ScreenshotSnippetProps) 
                         }}
                         placeholder="Paste a website link"
                         aria-label="Website URL"
-                        className="min-w-0 flex-1 bg-transparent text-xs font-medium text-foreground/90 outline-none placeholder:text-foreground/42 sm:text-sm"
+                        className="min-w-0 flex-1 bg-transparent text-xs font-medium text-foreground/90 outline-hidden placeholder:text-foreground/42 sm:text-sm"
                       />
                     </div>
 

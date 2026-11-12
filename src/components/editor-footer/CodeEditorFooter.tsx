@@ -280,7 +280,7 @@ export default function CodeEditorFooter() {
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   setFontSize(parseInt(e.target.value, 10) || 14)
                 }
-                className="h-7 w-full border-black/30 bg-white/80 text-center text-xs [color-scheme:dark] dark:border-white/15 dark:bg-[#111010]/80 dark:text-gray-100"
+                className="h-7 w-full border-black/30 bg-white/80 text-center text-xs scheme-dark dark:border-white/15 dark:bg-[#111010]/80 dark:text-gray-100"
               />
             </div>
             <div className="w-24 shrink-0 space-y-1">

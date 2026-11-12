@@ -252,8 +252,8 @@ function CodeWindowChrome({
         data-export-sharp-border="true"
         className={`relative flex h-10 items-center border-b px-5 text-[12px] ${
           isLight
-            ? "border-black/[0.06] bg-white/95 text-black/45"
-            : "border-white/[0.06] bg-[#071010] text-white/55"
+            ? "border-black/6 bg-white/95 text-black/45"
+            : "border-white/6 bg-[#071010] text-white/55"
         }`}
         style={{backgroundColor: chromeColor}}
       >
@@ -262,7 +262,7 @@ function CodeWindowChrome({
           placeholder="untitled"
           value={title}
           onChange={(event) => onTitleChange(event.target.value)}
-          className={`w-36 truncate border-0 bg-transparent p-0 text-[12px] outline-none ${
+          className={`w-36 truncate border-0 bg-transparent p-0 text-[12px] outline-hidden ${
             isLight
               ? "text-black/45 placeholder:text-black/45"
               : "text-white/65 placeholder:text-white/55"
@@ -300,8 +300,8 @@ function CodeWindowChrome({
       data-export-sharp-border="true"
       className={`relative flex h-10 items-center border-b px-5 ${
         isLight
-          ? "border-black/[0.06] bg-white/95"
-          : "border-white/[0.06] bg-[#080b16]"
+          ? "border-black/6 bg-white/95"
+          : "border-white/6 bg-[#080b16]"
       }`}
       style={{backgroundColor: chromeColor}}
     >
@@ -315,7 +315,7 @@ function CodeWindowChrome({
         placeholder="untitled"
         value={title}
         onChange={(event) => onTitleChange(event.target.value)}
-        className={`mx-auto w-44 truncate border-0 bg-transparent p-0 text-center text-[12px] font-medium outline-none ${
+        className={`mx-auto w-44 truncate border-0 bg-transparent p-0 text-center text-[12px] font-medium outline-hidden ${
           isLight
             ? "text-black/45 placeholder:text-black/45"
             : "text-white/70 placeholder:text-white/50"
@@ -404,7 +404,7 @@ export default function CodeSnippet() {
       ref={setPreviewRef}
       data-export-sharp-border="true"
       className={`mx-auto box-border flex w-full max-w-[900px] items-center justify-center rounded-[4px] shadow-[0_32px_90px_rgba(0,0,0,0.42)] ${
-        isBackgroundHidden ? "!bg-none shadow-none" : ""
+        isBackgroundHidden ? "bg-none! shadow-none" : ""
       }`}
       style={{
         background: gradient,

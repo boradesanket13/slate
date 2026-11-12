@@ -16,7 +16,7 @@ export default function Error({error, reset}: ErrorPageProps) {
   }, [error]);
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-white via-white to-gray-50 px-6 py-16 text-gray-900 dark:from-[#111010] dark:via-[#111010] dark:to-[#111010] dark:text-white">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-linear-to-b from-white via-white to-gray-50 px-6 py-16 text-gray-900 dark:from-[#111010] dark:via-[#111010] dark:to-[#111010] dark:text-white">
       <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-amber-200/40 blur-3xl dark:bg-[#111010]/20" />
       <div className="pointer-events-none absolute -bottom-24 right-10 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl dark:bg-[#111010]/20" />
 

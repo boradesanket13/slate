@@ -214,7 +214,7 @@ export default function BackgroundSelect({
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="flex h-10 w-full items-center justify-center gap-2 rounded-md border border-dashed border-black/25 bg-black/[0.03] text-xs font-medium text-gray-700 transition hover:bg-black/[0.06] dark:border-white/20 dark:bg-white/[0.04] dark:text-gray-200 dark:hover:bg-white/[0.08]"
+                className="flex h-10 w-full items-center justify-center gap-2 rounded-md border border-dashed border-black/25 bg-black/3 text-xs font-medium text-gray-700 transition hover:bg-black/6 dark:border-white/20 dark:bg-white/4 dark:text-gray-200 dark:hover:bg-white/8"
               >
                 <ImagePlus className="h-4 w-4" />
                 Upload background
@@ -242,7 +242,7 @@ export default function BackgroundSelect({
                   max={24}
                   step={1}
                   value={safeBlurValue}
-                  aria-label="Background blur"
+                  aria-label="Background blur-sm"
                   onChange={(event) => {
                     onBlurChange?.(
                       Math.max(0, Math.min(24, Number(event.target.value) || 0)),
@@ -270,7 +270,7 @@ export default function BackgroundSelect({
                         onChange(item.gradient);
                         setIsOpen(false);
                       }}
-                      className="rounded-md p-0 outline-none focus:ring-2 focus:ring-blue-400/70"
+                      className="rounded-md p-0 outline-hidden focus:ring-2 focus:ring-blue-400/70"
                       aria-label={item.name}
                       title={item.name}
                     >

@@ -171,7 +171,7 @@ export default function ScreenshotTransformControls({target, settings, style, se
         if (event.key === "Escape") {onSelect(false); event.currentTarget.blur();}
         if (event.key === "Delete" || event.key === "Backspace") {event.preventDefault(); remove();}
       }}
-      className="pointer-events-auto absolute z-20 touch-none select-none focus:outline-none"
+      className="pointer-events-auto absolute z-20 touch-none select-none focus:outline-hidden"
       style={{
         width: size.width, height: size.height, cursor: "move",
         outline: selected ? "1px solid #3b82f6" : "none",
@@ -191,7 +191,7 @@ export default function ScreenshotTransformControls({target, settings, style, se
               const direction = event.key === "ArrowUp" || event.key === "ArrowRight" ? 1 : -1;
               update({imageScale: Math.max(1, Math.min(maxScale, settings.imageScale + direction * (event.shiftKey ? 10 : 1)))});
             }}
-            className="absolute flex h-6 w-6 touch-none items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500"
+            className="absolute flex h-6 w-6 touch-none items-center justify-center focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-blue-500"
             style={{
               top: corner.startsWith("top") ? -12 : undefined,
               bottom: corner.startsWith("bottom") ? -12 : undefined,
