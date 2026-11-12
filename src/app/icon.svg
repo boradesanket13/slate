@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Slate icon">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e293b"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#tile)"/>
+  <rect x="78" y="50" width="128" height="108" rx="18" fill="url(#accent)" opacity="0.92"/>
+  <rect x="50" y="88" width="132" height="120" rx="18" fill="#0f172a" stroke="#475569" stroke-width="4"/>
+  <path d="M82 126l24 18-24 18" fill="none" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="120" y="166" width="34" height="10" rx="5" fill="#5eead4"/>
+</svg>

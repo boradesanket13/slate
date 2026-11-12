@@ -1,0 +1,27 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="fade" gradientUnits="userSpaceOnUse" cx="713.317" cy="431.545" r="1080"><stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <mask id="rays" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="675"><rect width="1200" height="675" fill="url(#fade)"/></mask>
+    <radialGradient id="core" gradientUnits="userSpaceOnUse" cx="713.317" cy="431.545" r="720"><stop offset="0" stop-color="#c084fc" stop-opacity="0.95"/><stop offset="0.18" stop-color="#c084fc" stop-opacity="0.55"/><stop offset="0.4" stop-color="#f472b6" stop-opacity="0.22"/><stop offset="0.65" stop-color="#f472b6" stop-opacity="0.07"/><stop offset="0.85" stop-color="#f472b6" stop-opacity="0.015"/><stop offset="1" stop-color="#f472b6" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#13051f"/>
+  <g mask="url(#rays)"><g transform="translate(713.317 431.545)">
+    <path d="M0 0 L1210.196 984.391 L976.062 1216.924 Z" fill="#f472b6" fill-opacity="0.098"/>
+    <path d="M0 0 L741.365 1372.581 L518.092 1471.455 Z" fill="#c084fc" fill-opacity="0.137"/>
+    <path d="M0 0 L159.668 1551.807 L-162.546 1551.509 Z" fill="#c084fc" fill-opacity="0.129"/>
+    <path d="M0 0 L-446.337 1494.785 L-724.664 1381.471 Z" fill="#f472b6" fill-opacity="0.053"/>
+    <path d="M0 0 L-984.391 1210.196 L-1214.981 978.479 Z" fill="#c084fc" fill-opacity="0.101"/>
+    <path d="M0 0 L-1372.581 741.365 L-1460.131 549.198 Z" fill="#c084fc" fill-opacity="0.059"/>
+    <path d="M0 0 L-1551.807 159.668 L-1560 0.878 Z" fill="#f472b6" fill-opacity="0.106"/>
+    <path d="M0 0 L-1494.785 -446.337 L-1430.986 -621.191 Z" fill="#c084fc" fill-opacity="0.085"/>
+    <path d="M0 0 L-1210.196 -984.391 L-974.571 -1218.118 Z" fill="#c084fc" fill-opacity="0.116"/>
+    <path d="M0 0 L-741.365 -1372.581 L-536.471 -1464.855 Z" fill="#f472b6" fill-opacity="0.079"/>
+    <path d="M0 0 L-159.668 -1551.807 L107.62 -1556.283 Z" fill="#c084fc" fill-opacity="0.128"/>
+    <path d="M0 0 L446.337 -1494.785 L711.274 -1388.412 Z" fill="#c084fc" fill-opacity="0.099"/>
+    <path d="M0 0 L984.391 -1210.196 L1108.044 -1098.107 Z" fill="#f472b6" fill-opacity="0.125"/>
+    <path d="M0 0 L1372.581 -741.365 L1488.48 -466.934 Z" fill="#c084fc" fill-opacity="0.13"/>
+    <path d="M0 0 L1551.807 -159.668 L1554.548 130.31 Z" fill="#c084fc" fill-opacity="0.13"/>
+    <path d="M0 0 L1494.785 446.337 L1431.253 620.576 Z" fill="#f472b6" fill-opacity="0.078"/>
+  </g></g>
+  <rect width="1200" height="675" fill="url(#core)"/>
+</svg>

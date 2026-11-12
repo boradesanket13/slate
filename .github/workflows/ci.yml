@@ -1,0 +1,98 @@
+name: CI/CD
+
+
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+  VERCEL_CLI_VERSION: "62.4.0"
+
+jobs:
+  verify:
+    name: Lint, typecheck, test, build, e2e
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://example.invalid
+      - run: npm run test:e2e
+        env:
+          NEXT_PUBLIC_SITE_URL: https://example.invalid
+
+  audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: npm audit --omit=dev --audit-level=high
+
+  deploy:
+    name: Deploy to Vercel
+    needs: verify
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - name: Check deploy secrets
+        run: |
+          missing=0
+          for name in VERCEL_TOKEN VERCEL_ORG_ID VERCEL_PROJECT_ID; do
+            if [ -z "${!name}" ]; then echo "::error::Missing GitHub secret $name (see DEPLOYMENT.md, step 4)"; missing=1; fi
+          done
+          exit $missing
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Pull Vercel project settings
+        run: npx --yes vercel@${VERCEL_CLI_VERSION} pull --yes --environment=production --token="$VERCEL_TOKEN"
+      - name: Build
+        run: npx --yes vercel@${VERCEL_CLI_VERSION} build --prod --token="$VERCEL_TOKEN"
+      - name: Deploy
+        run: npx --yes vercel@${VERCEL_CLI_VERSION} deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+      - name: Health check
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          if [ -z "$SITE_URL" ]; then
+            echo "::warning::GitHub variable SITE_URL is not set, skipping the post-deploy health check."
+            exit 0
+          fi
+          for attempt in 1 2 3 4 5 6 7 8 9 10; do
+            body=$(curl -fsS --max-time 15 "${SITE_URL%/}/api/health" || true)
+            if echo "$body" | grep -q '"status":"ok"'; then echo "Healthy: $body"; exit 0; fi
+            echo "Attempt $attempt: not healthy yet ($body)"; sleep 6
+          done
+          echo "::error::Health check failed for $SITE_URL"; exit 1

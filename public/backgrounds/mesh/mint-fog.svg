@@ -1,0 +1,16 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9f99d"/><stop offset="1" stop-color="#99f6e4"/></linearGradient>
+    <radialGradient id="b0" cx="0.676" cy="0.641" r="0.62"><stop offset="0" stop-color="#5eead4" stop-opacity="0.874"/><stop offset="1" stop-color="#5eead4" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b1" cx="0.817" cy="0.673" r="0.476"><stop offset="0" stop-color="#bae6fd" stop-opacity="0.924"/><stop offset="1" stop-color="#bae6fd" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b2" cx="0.18" cy="0.902" r="0.568"><stop offset="0" stop-color="#a7f3d0" stop-opacity="0.799"/><stop offset="1" stop-color="#a7f3d0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b3" cx="0.55" cy="0.729" r="0.534"><stop offset="0" stop-color="#fef08a" stop-opacity="0.855"/><stop offset="1" stop-color="#fef08a" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b4" cx="0.172" cy="0.532" r="0.695"><stop offset="0" stop-color="#7dd3fc" stop-opacity="0.919"/><stop offset="1" stop-color="#7dd3fc" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#base)"/>
+  <rect width="1200" height="675" fill="url(#b0)"/>
+  <rect width="1200" height="675" fill="url(#b1)"/>
+  <rect width="1200" height="675" fill="url(#b2)"/>
+  <rect width="1200" height="675" fill="url(#b3)"/>
+  <rect width="1200" height="675" fill="url(#b4)"/>
+</svg>
